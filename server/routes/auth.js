@@ -95,9 +95,8 @@ router.post('/createEvent', async (req, res) => {
     });
 
     await event.save();
-
+    console.log('Event created successfully:', event);
     res.status(201).json({ message: 'Event created successfully' });
-    alert("Event Created Successfully")
   } catch (error) {
     console.error('Event creation error:', error);
     res.status(500).json({ message: 'Internal server error' });
